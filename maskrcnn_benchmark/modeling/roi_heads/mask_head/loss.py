@@ -125,9 +125,10 @@ class MaskRCNNLossComputation(object):
             return mask_logits.sum() * 0
 
         mask_loss = F.binary_cross_entropy_with_logits(
-            mask_logits[positive_inds, labels_pos], mask_targets
+            mask_logits[positive_inds, labels_pos], mask_targets, reduce=False
         )
-        return mask_loss
+        #return mask_loss
+        return mask_loss.sum(-1).sum(-1) / 28 / 28
 
 
 def make_roi_mask_loss_evaluator(cfg):

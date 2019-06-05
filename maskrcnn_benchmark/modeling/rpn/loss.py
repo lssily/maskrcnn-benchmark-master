@@ -123,6 +123,7 @@ class RPNLossComputation(object):
             beta=1.0 / 9,
             size_average=False,
         ) / (sampled_inds.numel())
+        box_loss = torch.sum(box_loss)/len(regression_targets[sampled_pos_inds])
 
         objectness_loss = F.binary_cross_entropy_with_logits(
             objectness[sampled_inds], labels[sampled_inds]

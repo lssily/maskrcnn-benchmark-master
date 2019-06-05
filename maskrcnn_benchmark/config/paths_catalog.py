@@ -5,8 +5,22 @@ import os
 
 
 class DatasetCatalog(object):
-    DATA_DIR = "datasets"
+    DATA_DIR = "/data/wanglan/Repository/maskrcnn-benchmark-master/maskrcnn_benchmark/data/datasets"
     DATASETS = {
+        #my dataset
+        "weakly_coco_train": {
+            "img_dir": "coco/mypascal2012/JPEGImages",
+            "ann_file": "coco/mypascal2012/annotations/grabcut_rebox_allmask.json"
+        },
+        "weakly_coco_validation": {
+            "img_dir": "coco/mypascal2012/JPEGImages",
+            "ann_file": "coco/mypascal2012/annotations/GT_train.json"
+        },
+        "weakly_coco_test": {
+            "img_dir": "coco/mypascal2012/JPEGImages",
+            "ann_file": "coco/mypascal2012/annotations/voc_2012_val.json"
+        },
+
         "coco_2017_train": {
             "img_dir": "coco/train2017",
             "ann_file": "coco/annotations/instances_train2017.json"
