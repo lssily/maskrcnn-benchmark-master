@@ -30,4 +30,4 @@ dist/
 /models
 
 #dataset
-data/datasets/coco
+maskrcnn_benchmark/data/datasets/coco
