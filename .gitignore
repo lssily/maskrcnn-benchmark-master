@@ -28,3 +28,6 @@ dist/
 # project dirs
 /datasets
 /models
+
+#dataset
+data/datasets/coco
